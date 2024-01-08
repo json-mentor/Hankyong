@@ -10,6 +10,7 @@ import com.hankyong.hankyongsample.databinding.ActivityMainBinding
 import com.hankyong.hankyongsample.presentation.adapters.SomeInfoListAdapter
 import com.hankyong.hankyongsample.presentation.dialogs.LoadingDialog
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -39,6 +40,8 @@ class MainActivity @Inject constructor() : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         mContext = this@MainActivity
         super.onCreate(savedInstanceState)
+
+        Timber.d("add Some log.")
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
